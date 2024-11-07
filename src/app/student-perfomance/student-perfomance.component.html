@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Orange DLE - Performance Reports</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./student-perfomance.component.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <app-side-bar></app-side-bar>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column content-fluid">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <app-top-nav></app-top-nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div style="height: 38rem; overflow-y: auto; scrollbar-width: none; /* hides the scrollbar (works in Firefox) */
+  -ms-overflow-style: none;">
+                        <h1 class="mt-4">Performance Reports</h1>
+
+                        <!-- Performance Overview -->
+                        <div class="row mb-4">
+                            <div class="col-xl-6 col-md-12 mb-4">
+                                <div class="card shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Overall Performance</h5>
+                                        <canvas id="overallPerformanceChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6 col-md-12 mb-4">
+                                <div class="card shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Module Performance</h5>
+                                        <canvas id="modulePerformanceChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Detailed Performance Table -->
+                        <h2>Detailed Performance</h2>
+                        <div style="height: 35rem; overflow-y: auto;">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Course</th>
+                                        <th>Module</th>
+                                        <th>Grade</th>
+                                        <th>Percentage</th>
+                                        <th>Feedback</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Systimatic Theology</td>
+                                        <td>Old Testament Survey</td>
+                                        <td>A</td>
+                                        <td>92%</td>
+                                        <td>Excellent work!</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Systimatic Theology</td>
+                                        <td>New Testament Survey</td>
+                                        <td>B+</td>
+                                        <td>85%</td>
+                                        <td>Good understanding of concepts.</td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td>Literature</td>
+                                        <td>Shakespeare</td>
+                                        <td>A-</td>
+                                        <td>88%</td>
+                                        <td>Great analysis of texts.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>History</td>
+                                        <td>World History</td>
+                                        <td>B</td>
+                                        <td>80%</td>
+                                        <td>Needs improvement in essay writing.</td>
+                                    </tr> -->
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <app-footer></app-footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

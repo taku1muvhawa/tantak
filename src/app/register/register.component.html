@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- <body class="bg-gradient-primary" style="margin-top: -130px;"> -->
+
+<body style="margin-top: -130px; background-color: rgb(246, 243, 237);">
+
+    <div class="container">
+
+        <mat-card class="card o-hidden border-0 shadow-lg my-5" style="top:18px; height: 50%;">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image">
+                        <img src="../../assets/img/Tantak Logo version 2.png" height="520px" width="522px" />
+                        <!-- <img src="../../assets/img/cat-2.jpg" height="100%" width="115%" /> -->
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <!-- <div class="text-center">
+
+                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                            </div> -->
+                            <div class="row text-center"
+                                style="display: flex; align-items: center; justify-content: center; margin: 0;">
+                                <div class="col-lg-8" style="margin-left: -50;">
+                                    <div>
+                                        <!-- <img src="../../assets/Icons/nlcc-logo.png" height="50px" width="120px"  /> -->
+                                        <h1 class="h4 text-900 mb-1" style="margin: 0; color: rgb(59, 71, 240);">
+                                            E-LEANING PORTAL</h1>
+                                    </div>
+                                    <h1 class="h4 text-gray-900 mb-4" style="margin: 0;">Create an Account!</h1>
+                                </div>
+                            </div>
+                            <form class="user" [formGroup]="reactiveForm" (ngSubmit)="saveUser()">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Name" formControlName="name">
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="Surname" formControlName="surname">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Email Address" formControlName="email">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="Password" type="password"
+                                            formControlName="password">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-dark btn-user btn-block"
+                                    style="background-color: rgba(41, 78, 199, 0.866); border-color: rgba(41, 78, 199, 0.866);">
+                                    Register Account
+                                </button>
+                            </form> <br />
+                            <hr>
+                            <!-- <div class="text-center">
+                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                            </div> -->
+                            <div class="text-center">
+                                <a class="small" style="color:black;" href="/">Already have an account? Login!</a>
+                            </div>
+                        </div>
+                        <!-- <br><br>     -->
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Orange DLE</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./learning-material.component.css">
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+            <app-side-bar></app-side-bar>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column content-fluid">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <app-top-nav></app-top-nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div style="height: 35rem; overflow-y: auto; scrollbar-width: none; /* hides the scrollbar (works in Firefox) */
+  -ms-overflow-style: none;">
+                        <!-- Page Heading -->
+                        <!-- <h1 class="h3 mb-4 text-gray-800">Available Modules</h1> -->
+                        <h1 *ngIf="role == 'Teacher'">Upload Content <input type="submit" value="Upload"
+                                style="height: 40px; font-weight: bold; color: blue;"> </h1>
+
+                        <table mat-table [dataSource]="dataSource" style="width:100%" class="TopChannels"
+                            style="background-color: #f1f5f9;">
+                            <!-- Weight Column -->
+                            <ng-container matColumnDef="code">
+                                <th mat-header-cell *matHeaderCellDef></th>
+                                <td mat-cell *matCellDef="let element">
+                                    <h2 style="font-size: 18px;">Lesson {{element.lesson_no}} 
+                                        <!-- <button *ngIf="displayDelete"
+                                            (click)="FunctionDelete(element.Code)" mat-raised-button color="accent"
+                                            style="margin-left: 70%;">Remove</button> -->
+                                        </h2>
+                                    <h3 style="font-size: 16px;">Topic: {{element.topic}}</h3>
+                                    <h4 style="font-size: 16+px;">Objectives: {{element.objectives}}</h4>
+                                    <h3 *ngIf="element.assignment != null && element.assignment != ''"
+                                        style="font-size: 16px;">
+                                        Assignment: {{element.assignment}}</h3>
+                                    <!-- <a [href]="element.AssignmentLink"
+                                        *ngIf="element.AssignmentLink != null && element.AssignmentLink != ''"
+                                        style="font-size: large;">{{element.AssignmentText}}<br></a> -->
+                                    <video class="video" width="95%px" height="55%" controls>
+                                        <source [src]="element.video" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <!-- <div class="message-input">
+                                        <input type="text" [(ngModel)]="newMessage" placeholder="Type a message...">
+                                        <button (click)="sendMessage()" class="send-button">Send</button>
+                                    </div> -->
+
+                                </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <!-- <app-footer></app-footer> -->
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

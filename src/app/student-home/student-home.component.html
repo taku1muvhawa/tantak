@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Orange DLE</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./student-home.component.css">
+    <style>
+        /* Hide search icon in top navigation */
+        .top-nav .fa-search {
+            display: none;
+        }
+
+        /* Ensure the canvas elements are responsive */
+        canvas {
+            max-height: 100%;
+            height: auto;
+        }
+
+        /* Body styling */
+        body {
+            max-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container for scrollable content */
+        .scrollable-content {
+            max-height: calc(100vh - 100px);
+            overflow-y: scroll;
+            padding-bottom: 2rem;
+        }
+
+        /* Hide scrollbars */
+        .scrollable-content::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollable-content {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <app-side-bar></app-side-bar>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column content-fluid"
+            style="background-color: rgba(217, 224, 224, 0.863);">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <app-top-nav></app-top-nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div style="height: 35rem; overflow-y: auto;  scrollbar-width: none; /* hides the scrollbar (works in Firefox) */
+  -ms-overflow-style: none;">
+
+                        <!-- <h4 style="font-weight: bold;" *ngIf="!isAdmin">{{subState}}</h4> -->
+                        <div class="cards" style="font-size: 30px; font-weight: bold;">
+                            <div class="card-single">
+                                <div>
+                                    <h1>54</h1>
+                                    <span style="padding-bottom: 1rem;">Lessons</span>
+                                    <span style="color: #fff;">__</span>
+                                </div>
+                                <div>
+                                    <span><img src="../../assets/Icons/BoardIcon.png" width="40px" height="40px"></span>
+                                    <div>
+                                        <div>
+                                            <p></p>
+                                        </div>
+                                        <button *ngIf="!isAdmin" (click)="RedirectToLearningMaterial()"
+                                            style="background-color: #675dc5; border-color: #675dc5;">Enter<span></span></button>
+                                        <button *ngIf="isAdmin" (click)="FunctionPopup()"
+                                            style="background-color: #675dc5; border-color: #675dc5;">Enter<span></span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-single">
+                                <div>
+                                    <h1>124</h1>
+                                    <span>Assignments</span>
+                                    <span style="color: #fff;">______</span>
+
+                                </div>
+                                <div>
+                                    <span><img src="../../assets/Icons/BoardIcon.png" width="40px" height="40px"></span>
+                                    <div>
+                                        <div>
+                                            <p></p>
+                                        </div>
+                                        <button (click)="RedirectToAssignments()"
+                                            style="background-color: #675dc5; border-color: #675dc5;">Enter<span></span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card-single">
+                                <div>
+                                    <h1>154</h1>
+                                    <span>Notes</span>
+                                    <span style="color: #fff;">______</span>
+
+                                </div>
+                                <div>
+                                    <span><img src="../../assets/Icons/BoardIcon.png" width="40px" height="40px"></span>
+                                    <div>
+                                        <div>
+                                            <p></p>
+                                        </div>
+                                        <button (click)="RedirectToEbooks()"
+                                            style="background-color: #675dc5; border-color: #675dc5;">Enter<span></span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card-single">
+                                <div>
+                                    <h1>24</h1>
+                                    <!-- <span>Reports</span> -->
+                                    <span>Results</span>
+                                    <span style="color: #fff;">______</span>
+                                </div>
+                                <div>
+                                    <span><img src="../../assets/Icons/BoardIcon.png" width="40px" height="40px"></span>
+                                    <div>
+                                        <div>
+                                            <p></p>
+                                        </div>
+                                        <button (click)="RedirectToReports()"
+                                            style="background-color: #675dc5; border-color: #675dc5;">Enter<span></span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="card-single">
+                                <div>
+                                    <h1>25</h1>
+                                    <span>Feedback</span>
+                                    <span style="color: #fff;">______</span>
+
+                                </div>
+                                <div>
+                                    <span><img src="../../assets/Icons/BoardIcon.png" width="40px" height="40px"></span>
+                                    <div>
+                                        <div>
+                                            <p></p>
+                                        </div>
+                                        <button (click)="RedirectToFeedback()"
+                                            style="background-color: #675dc5; border-color: #675dc5;">Enter<span></span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="card-single" style="background-color: rgb(47, 86, 240);"> -->
+                            <div class="card-single" style="background-color: #675dc5;">
+                                <div>
+                                    <!-- <h3 *ngIf="!isAdmin">{{subscriptionState}}</h3> -->
+                                    <!-- <h3 *ngIf="isAdmin">Admin Account</h3> -->
+                                    <h3>Subscribed</h3>
+                                    <span>Enrollment</span>
+
+                                </div>
+                                <div>
+                                    <span><img src="../../assets/Icons/BoardIcon.png" width="40px" height="40px"></span>
+                                    <div>
+                                        <div>
+                                            <p></p>
+                                        </div>
+                                        <!-- <button *ngIf="!isAdmin" (click)="FunctionSubscribePopup()"
+                                            style="background-color: white !important; color: #675dc5; border-color: #675dc5;">Subscribe<span></span></button> -->
+                                        <button *ngIf="!isAdmin"
+                                            style="background-color: white !important; color: #675dc5; border-color: #675dc5;">Subscribed<span></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recent-grid">
+                            <div class="Projects">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 style="font-size: 30px; font-weight: bold;">Topics Available</h3>
+                                        <button
+                                            style="background-color: #675dc5; border-color: #675dc5;">See
+                                            All<span class="las la-arrow-right"></span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <table mat-table [dataSource]="dataSource">
+
+                                            <ng-container matColumnDef="term">
+                                                <th mat-header-cell *matHeaderCellDef class="tblHeader">Lesson</th>
+                                                <td mat-cell *matCellDef="let element">{{ element.lesson_no }}</td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="topic">
+                                                <th mat-header-cell *matHeaderCellDef class="tblHeader">Topic</th>
+                                                <td mat-cell *matCellDef="let element">{{ element.topic }}</td>
+                                            </ng-container>
+
+                                            <ng-container matColumnDef="status">
+                                                <th mat-header-cell *matHeaderCellDef class="tblHeader">Status</th>
+                                                <td mat-cell *matCellDef="let element">Available</td>
+                                            </ng-container>
+
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="recent-gride">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 style="font-size: 20px; font-weight: bold;">Notifications</h3>
+                                        <button style="background-color: #675dc5; border-color: #675dc5;">See All<span
+                                                class="las la-arrow-right"></span></button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="customer">
+                                            <!--<img src="https://localhost:7083/Upload/Product/0202/0202.png" width="35px" height="35px" alt="">-->
+                                            <h4 style="padding: 5px; font-size: 17px;">No Notifications Available</h4>
+                                        </div>
+
+                                        <div>
+                                            <span class="las la-user-circle"></span>
+                                            <span class="las la-user-comment"></span>
+                                            <span class="las la-user-phone"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--End Main-->
+
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <app-footer></app-footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

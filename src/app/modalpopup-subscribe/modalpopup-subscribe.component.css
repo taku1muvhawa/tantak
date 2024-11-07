@@ -1,0 +1,15 @@
+.ml-3 bd-highlight{
+    position: right;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between buttons */
+}
+
+.button-row button {
+    flex: none; /* Prevent buttons from stretching */
+}
+

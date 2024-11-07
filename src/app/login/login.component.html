@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- <body class="bg-gradient-primary"> -->
+<body style="background-color: rgb(246, 243, 237);">
+
+    <div class="container">
+
+        <!-- Outer Row -->
+        <div class="row justify-content-center" style="height: auto; margin-top: 18px;">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <mat-card class="card o-hidden border-0 shadow-lg my-5" style="top: -13px; width: 110%; margin-left: -50px;">
+                    <div class="card-body p-0" style="height: 500px;">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                                <img src="../../assets/img/Tantak Logo version 2.png" height="500px" width="550px"  />
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="row text-center" style="display: flex; align-items: center; justify-content: center; margin: 0;">
+                                        <div class="col-lg-8" style="margin-left: -50;">
+                                            <div>
+                                                <h1 class="h2 text-900 mb-1" style="margin: 0; color: rgb(59, 71, 240);">E-LEARNING PORTAL!</h1>
+                                            </div>
+                                            <h1 class="h4 text-gray-900 mb-4" style="margin: 0;">SIGN IN!</h1>
+                                        </div>
+                                    </div>
+                                    
+                                    <form class="user" #loginform="ngForm" (submit)="ProceedLogin(loginform)">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Enter Email Address..." name="email"  ngModel>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Password"  required name="password" ngModel>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Remember
+                                                    Me</label>
+                                            </div>
+                                        </div>
+                                        <button  class="btn btn-dark btn-user btn-block" type="submit" style="background-color: rgba(41, 78, 199, 0.866); border-color: rgba(41, 78, 199, 0.866);">
+                                            Login
+                                        </button>
+    
+                                    </form>
+                                    <hr>
+                                    <!-- <div class="text-center">
+                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    </div> -->
+                                    <div class="text-center">
+                                        <a class="small" style="color:black;" href="/register">Create an Account!</a>
+                                    </div>
+                                </div>
+                                <br><br><br><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
+
+

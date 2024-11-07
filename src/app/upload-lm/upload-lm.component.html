@@ -1,0 +1,43 @@
+<div class="container" style="width: 450px; margin-left: auto; margin-right: auto; padding: 2rem; overflow-y: auto; max-height: 80vh;">
+  <form action="">
+      <div>
+          <h2>Upload a Lesson</h2>
+          <div class="mb-3">
+              <label for="lesson" class="form-label">Lesson Number:</label>
+              <input type="number" id="lesson" name="lesson" [(ngModel)]="lesson" class="form-control" style="width: 100%;" required>
+          </div>
+          <div class="mb-3">
+              <label for="topic" class="form-label">Topic:</label>
+              <input type="text" id="topic" name="topic" [(ngModel)]="topic" class="form-control" style="width: 100%;" required>
+          </div>
+          <div class="mb-3">
+              <label for="objectives" class="form-label">Objectives:</label>
+              <textarea id="objectives" name="objectives" [(ngModel)]="objectives" class="form-control" rows="3" style="width: 100%;"></textarea>
+          </div>
+          <div class="mb-3">
+              <label for="assignmentText" class="form-label">Assignment Text:</label>
+              <input type="text" id="assignment" name="assignment" [(ngModel)]="assignmentText" class="form-control" style="width: 100%;">
+          </div>
+          <div class="mb-3">
+              <label for="releaseDate" class="form-label">Date to Release the Lesson:</label>
+              <input type="date" id="releaseDate" name="releaseDate" [(ngModel)]="fReleaseDate" class="form-control" style="width: 100%;">
+          </div>
+          <!-- <div class="mb-3">
+              <label for="closingDate" class="form-label">Date to Remove the Lesson:</label>
+              <input type="date" id="closingDate" name="closingDate" [(ngModel)]="fClosingDate" class="form-control" style="width: 100%;">
+          </div> -->
+          <div class="mb-3">
+              <label for="lessonVideo" class="form-label">Lesson Video:</label>
+              <input type="file" id="lessonVideo" accept="video/mp4" (change)="onchange($event)" class="form-control" style="width: 100%;">
+          </div>
+      </div>
+      <div class="d-flex justify-content-start" style="padding-top: 1rem;">
+          <button *ngIf="btnClick" type="button" class="btn btn-primary me-2" (click)="uploadFile(code, file)">Upload</button>
+          <button *ngIf="!btnClick" disabled="true" class="btn btn-primary me-2">Uploading...</button>
+          <button type="button" class="btn btn-secondary" (click)="FunctionClose()">Cancel</button>
+      </div>
+  </form>
+  <div class="mt-3">
+      <mat-progress-bar *ngIf="!btnClick" mode="indeterminate"></mat-progress-bar>
+  </div>
+</div>

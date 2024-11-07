@@ -1,0 +1,42 @@
+<div class="container-fluid" style="padding: 2rem; overflow-x: hidden;">
+    <form action="">
+        <div *ngIf="channelRole != 'Teacher'">
+            <div *ngIf="SubscriptionStatus == 'False'">
+                <div *ngIf="button == 'LM'">
+                    <h1>Learning Material</h1>
+                    <h2>Subscribe to access the learning material</h2>
+                </div>
+                <div class="col-md-12" *ngIf="button == 'assignments'">
+                    <h1>Assignment</h1>
+                    <h2>Subscribe to access the assignments</h2>
+                </div>
+                <div class="col-md-12" *ngIf="button == 'books'">
+                    <h1>Books</h1>
+                    <h2>Subscribe to access the books</h2>
+                </div>
+                <div class="col-md-12" *ngIf="button == 'reports'">
+                    <h1>Reports</h1>
+                    <h2>Subscribe to access this feature</h2>
+                </div>
+                <div class="col-md-12" *ngIf="button == 'feedback'">
+                    <h1>Feedback</h1>
+                    <h2>Subscribe to access this feature</h2>
+                </div>
+                <div class="col-md-12" *ngIf="button == 'RateChannel'">
+                    <h1>Rate Channel</h1>
+                    <h2>Subscribe to access the feature</h2>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="channelRole == 'Teacher'">
+            <div class="col-md-12">
+                <h1>Learning Material</h1>
+                <h2>Do you want to upload learning material?</h2>
+                <div class="mt-3">
+                    <button type="button" class="btn btn-primary" (click)="FunctionUpdate()">Upload Lesson</button>
+                    <button type="button" class="btn btn-secondary" routerLink="/lessons" (click)="FunctionClosePopup()">View Lessons</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

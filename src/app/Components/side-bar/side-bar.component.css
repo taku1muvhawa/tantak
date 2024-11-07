@@ -1,0 +1,7 @@
+ .bg-gradient-primary {
+    background: linear-gradient(180deg, navy, rgb(5, 128, 169)); /* Adjust the second color as needed */
+} 
+
+/* .bg-gradient-primary {
+    background: linear-gradient(180deg, rgba(17, 112, 63, 0.866), rgba(11, 84, 46, 0.5)); /* Adjust the second color as needed *
+} */

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Orange DLE</title>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./manage-courses.component.css">
+</head>
+
+<body id="page-top" >
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+            <app-side-bar></app-side-bar>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column content-fluid">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <app-top-nav></app-top-nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid" >
+                    <div style="height: 35rem; overflow-y: auto; max-width: 100%; overflow-x: hidden; box-sizing: border-box;">
+                        <h1>Manage Courses</h1>
+
+                        <div>
+                            <div>
+            
+                                <div style="width: 800px; margin: auto" class="mat-elevation-z8">
+                                    <h2>All Channels <button mat-raised-button color="primary" (click)="FunctionAddChannel()"
+                                            style="margin-left: 28rem; float: inline-end;">Add Channel</button></h2>
+                                    <table mat-table [dataSource]="dataSource3">
+                                        <!--- Note that these columns can be defined in any order.
+                                The actual rendered columns are set as a property on the row definition" -->
+            
+                                        <ng-container matColumnDef="channelGrpId">
+                                            <th mat-header-cell *matHeaderCellDef>Channel</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.ChannelGrpID }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="name">
+                                            <th mat-header-cell *matHeaderCellDef>Name</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="instructor">
+                                            <th mat-header-cell *matHeaderCellDef>Admin</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.Instructor }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="adminEmail">
+                                            <th mat-header-cell *matHeaderCellDef>Email</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.AdminEmail }}</td>
+                                        </ng-container>
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action">
+                                            <th mat-header-cell *matHeaderCellDef>Action</th>
+                                            <td mat-cell *matCellDef="let element">
+                                                <button mat-raised-button color="primary"
+                                                    (click)="FunctionUpdate(element.channelId)" style="width: 3px;">
+                                                    Change
+                                                </button>
+                                                <!-- |
+                                                <button mat-raised-button color="accent" (click)="FunctionDelete(element.code)"
+                                                    style="width: 3px;">
+                                                    Delete
+                                                </button> -->
+                                            </td>
+                                        </ng-container>
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns3"></tr>
+                                    </table>
+            
+                                    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[3, 5, 10, 25, 100]"
+                                        aria-label="Select page">
+                                    </mat-paginator>
+                                </div>
+                            </div>
+                        </div><br><br>
+            
+            
+                        <div>
+                            <div>
+            
+                                <div style="width: 800px; margin: auto" class="mat-elevation-z8">
+                                    <h2>All Courses Levels <button mat-raised-button color="primary"
+                                            (click)="FunctionCreateCourse()" style="float: inline-end;">Add Course</button></h2>
+                                    <table mat-table [dataSource]="dataSource">
+                                        <!--- Note that these columns can be defined in any order.
+                                The actual rendered columns are set as a property on the row definition" -->
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="channelSubId">
+                                            <th mat-header-cell *matHeaderCellDef></th>
+                                            <td mat-cell *matCellDef="let element"></td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="name">
+                                            <th mat-header-cell *matHeaderCellDef>Name</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="description">
+                                            <th mat-header-cell *matHeaderCellDef>Description</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.Description }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="instructor">
+                                            <th mat-header-cell *matHeaderCellDef>Admin</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.Instructor }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="subjectLevel">
+                                            <th mat-header-cell *matHeaderCellDef>Courses</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.SubjectLevel }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="channelGrp">
+                                            <th mat-header-cell *matHeaderCellDef>Channel</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.ChannelGrp }}</td>
+                                        </ng-container>
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action">
+                                            <th mat-header-cell *matHeaderCellDef>Action</th>
+                                            <td mat-cell *matCellDef="let element">
+                                                <button mat-raised-button color="primary"
+                                                    (click)="FunctionUpdate(element.channelSubId)" style="width: 3px;">
+                                                    Change
+                                                </button>
+                                                <!-- |
+                                                <button mat-raised-button color="accent" (click)="FunctionDelete(element.code)"
+                                                    style="width: 3px;">
+                                                    Delete
+                                                </button> -->
+                                            </td>
+                                        </ng-container>
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                                    </table>
+            
+                                    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[3, 5, 10, 25, 100]"
+                                        aria-label="Select page">
+                                    </mat-paginator>
+                                </div>
+                            </div>
+                        </div><br><br><br>
+                        <div>
+                            <div>
+            
+                                <div style="width: 800px; margin: auto" class="mat-elevation-z8">
+                                    <h2>All Modules <button mat-raised-button color="primary" (click)="FunctionCreateModule()"
+                                            style="margin-left: 28rem; float: inline-end;">Add Module</button></h2>
+                                    <table mat-table [dataSource]="dataSource2">
+                                        <!--- Note that these columns can be defined in any order.
+                                The actual rendered columns are set as a property on the row definition" -->
+            
+                                        <ng-container matColumnDef="channelGrp">
+                                            <th mat-header-cell *matHeaderCellDef>Channel</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.ChannelGrp }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="name">
+                                            <th mat-header-cell *matHeaderCellDef>Name</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.Name }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="channelSub">
+                                            <th mat-header-cell *matHeaderCellDef>Course</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.ChannelSub }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="teacher">
+                                            <th mat-header-cell *matHeaderCellDef>Teacher</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.teacher }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="teacherEmail">
+                                            <th mat-header-cell *matHeaderCellDef>Teacher's Email</th>
+                                            <td mat-cell *matCellDef="let element">{{ element.TeacherEmail }}</td>
+                                        </ng-container>
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="subscriptionFee">
+                                            <th mat-header-cell *matHeaderCellDef>Price</th>
+                                            <td mat-cell *matCellDef="let element">${{ element.SubscriptionFee }}</td>
+                                        </ng-container>
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action">
+                                            <th mat-header-cell *matHeaderCellDef>Action</th>
+                                            <td mat-cell *matCellDef="let element">
+                                                <button mat-raised-button color="primary"
+                                                    (click)="FunctionUpdate(element.channelId)" style="width: 3px;">
+                                                    Change
+                                                </button>
+                                                <!-- |
+                                                <button mat-raised-button color="accent" (click)="FunctionDelete(element.code)"
+                                                    style="width: 3px;">
+                                                    Delete
+                                                </button> -->
+                                            </td>
+                                        </ng-container>
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: displayedColumns2"></tr>
+                                    </table>
+            
+                                    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[3, 5, 10, 25, 100]"
+                                        aria-label="Select page">
+                                    </mat-paginator>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <app-footer></app-footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

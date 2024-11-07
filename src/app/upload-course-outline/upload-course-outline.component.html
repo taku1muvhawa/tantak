@@ -1,0 +1,19 @@
+<div style="margin-left: 6rem;">
+    <form action="">
+        <div class="col-md-3">
+            <h2>Edit Course Outline</h2>
+             Term:<br>
+            <input type="text" name="lesson" [(ngModel)]="term" required><br>
+            Topic:<br>
+            <input type="text" name="topic" [(ngModel)]="topic" required><br>
+            Status:<br>
+            <input type="text" name="topic" [(ngModel)]="status" required><br><br>
+        </div>
+        <div style="padding-top: 0rem;">
+          <!-- <button type="button" class="btn-primary" (click)="CreateCourseOutline()" style="margin-left: 5rem; height: 30px;">Upload</button>|
+          <button type="button" class="btn-primary" (click)="FunctionCheckCode()" style="height: 30px;">Cancel</button> -->
+          <button mat-raised-button color="primary" (click)="CreateCourseOutline()">Upload</button>|
+          <button mat-raised-button color="accent" (click)="FunctionClose()">Cancel</button>
+      </div>
+    </form>
+  </div>
